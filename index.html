@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To Do App</title>
+</head>
+
+<body>
+    <header>
+        <h1>TO DO</h1>
+        <p class="font"> Get your sh*t done</p>
+    </header>
+    <main>
+        <form onsubmit="return false" class="adding-to-do">
+            <input type="text" id="writeToDo" placeholder="Write your stuff here" autocomplete="off">
+            <label for="writeToDo" class="visually-hidden"> To Do eintragen </label>
+            <button id="button-add" class="button-style font">Add</button>
+        </form>
+        <section class="section-1">
+            <h2>LET´S START</h2>
+            <ul id="to-do-list">
+            </ul>
+        </section>
+        <section>
+            <h2>WANNA SEE ...</h2>
+            <input type="radio" name="filter" id="all" class="radio-button">
+            <label for="all">All</label>
+            <input type="radio" name="filter" id="open" class="radio-button">
+            <label for="all">Open</label>
+            <input type="radio" name="filter" id="done" class="radio-button">
+            <label for="done">Done</label>
+        </section>
+        <button class="button-style font">Remove stuff done!</button>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
