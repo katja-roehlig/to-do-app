@@ -25,7 +25,7 @@ header {
   background-color: rgb(141, 213, 70);
   text-align: center;
   padding-block: 3em 1em;
-  box-shadow: 0px 3px 1px palevioletred, 0px 6px 0px rgb(33, 7, 125);
+  box-shadow: 0px 2px 1px palevioletred, 0px 4px 0px rgb(33, 7, 125);
 }
 h1 {
   font-family: "Gluten";
@@ -51,7 +51,7 @@ h3 {
   margin-top: 2em;
 }
 li {
-  padding: 0.2em 0.8em 0.05em 0.8em;
+  padding: 0.4em 0.8em;
   background-color: white;
 }
 /* Class-Selectors **************************************************************** */
@@ -79,26 +79,16 @@ li {
   border-radius: 0.4em;
   border: 0;
   background-color: rgb(141, 213, 70);
-  box-shadow: 3px 3px 1px palevioletred, 5px 5px 0px rgb(33, 7, 125);
+  box-shadow: 3px 2px 1px palevioletred, 5px 4px 0px rgb(33, 7, 125);
 }
 .font {
   font-family: "Gluten";
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: white;
   text-shadow: 1px 1px 0px rgb(33, 7, 125);
 }
 .checked {
   text-decoration: line-through;
-}
-.radio-container {
-  display: flex;
-  justify-content: space-around;
-  padding-block: 0.8em;
-  margin: 2em 5%;
-  border: none;
-  border-radius: 0.4em;
-  box-shadow: 0px 0px 4px palevioletred;
-  background-color: white;
 }
 /* ID-Selectors **************************************************************** */
 #write-to-do {
@@ -106,25 +96,13 @@ li {
   padding: 0.5em 0.9em;
   border-radius: 0.4em;
   border: 0;
-  box-shadow: 0px 0px 4px palevioletred;
 }
 #button-add {
   width: 4em;
 }
 #to-do-list {
-  list-style-type: none;
-  margin: 2em 5%;
   background-color: white;
   min-height: 10em;
-  padding-block: 0.5em;
-  border-radius: 0.4em;
-  box-shadow: 0px 0px 4px palevioletred;
-}
-#rm-button-container {
-  display: flex;
-  justify-content: center;
-  padding-block: 10%;
-  align-items: center;
 }
 
 /* Special-Selectors **************************************************************** */

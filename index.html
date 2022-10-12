@@ -16,25 +16,40 @@
     </header>
     <main>
         <form onsubmit="return false" class="adding-to-do">
-            <input type="text" id="writeToDo" placeholder="Write your stuff here" autocomplete="off">
-            <label for="writeToDo" class="visually-hidden"> To Do eintragen </label>
+            <input type="text" id="write-to-do" placeholder="Write your stuff here" autocomplete="off">
+            <label for="write-to-do" class="visually-hidden"> To Do eintragen </label>
             <button id="button-add" class="button-style font">Add</button>
         </form>
         <section class="section-1">
             <h2>LET´S START</h2>
             <ul id="to-do-list">
+
+                All things done. Chill now and have a nice day!
+
             </ul>
         </section>
         <section>
             <h2>WANNA SEE ...</h2>
-            <input type="radio" name="filter" id="all" class="radio-button">
-            <label for="all">All</label>
-            <input type="radio" name="filter" id="open" class="radio-button">
-            <label for="all">Open</label>
-            <input type="radio" name="filter" id="done" class="radio-button">
-            <label for="done">Done</label>
+            <fieldset class="radio-container">
+                <div>
+                    <input type="radio" name="filter" value="all" id="all" class="radio-button">
+                    <label for="all">All</label>
+                </div>
+                <div>
+                    <input type="radio" name="filter" value="open" id="open" class="radio-button">
+                    <label for="all">Open</label>
+                </div>
+                <div>
+                    <input type="radio" name="filter" value="done" id="done" class="radio-button">
+                    <label for="done">Done</label>
+                </div>
+            </fieldset>
+
         </section>
-        <button class="button-style font">Remove stuff done!</button>
+        <div id="rm-button-container">
+            <button id="button-remove" class="button-style font">Remove stuff done!</button>
+        </div>
+
 
     </main>
     <script src="script.js"></script>
