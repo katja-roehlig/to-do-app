@@ -98,6 +98,9 @@ function removeToDoDone() {
     return element.done === false;
   });
   arrayToDo = arrayRest;
-  showToDo(arrayToDo);
-  doList.innerText = "All things done. Chill now and have a nice day!";
+  if (arrayToDo.length < 1) {
+    doList.innerText = "All things done. Chill now and have a nice day!";
+  } else {
+    showToDo(arrayToDo);
+  }
 }
