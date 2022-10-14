@@ -1,20 +1,26 @@
-// EventListener: Add-Button, Checkbox +Label, selection Radiobuttons, remove-Button
+// Globale Variablen *******************************************************************
 
-// Globale Variablen
 const addBut = document.querySelector("#button-add");
 const writeToDo = document.querySelector("#write-to-do"); //Eingabefeld
-let arrayToDo = []; //leeres array für toDos
-const doList = document.querySelector("#to-do-list");
+const doList = document.querySelector(".to-do-list");
 const radioContainer = document.querySelector(".radio-container");
 let currentFilter = "all";
 const removeBut = document.querySelector("#button-remove");
 
-//Eventlistener
+//Starte Applikation *******************************************************************
+
+//Local Storage - wenn null, dann leeres array
+let arrayToDo = JSON.parse(localStorage.getItem("safe")) || []; //leeres array für toDos
+showToDo(arrayToDo);
+
+//Eventlistener ************************************************************************
+
 addBut.addEventListener("click", addToDo);
 radioContainer.addEventListener("change", showSelection);
 removeBut.addEventListener("click", removeToDoDone);
 
-//Functions:
+//**************************************************************************************
+
 function addToDo() {
   if (writeToDo.value === "") {
     return;
@@ -24,12 +30,15 @@ function addToDo() {
     done: false,
     id: createId(writeToDo.value),
   });
+  localStorage.setItem("safe", JSON.stringify(arrayToDo));
   showToDo(arrayToDo);
-  // ToDo anzeigen
 }
+
+//**************************************************************************************
 
 function showToDo(array) {
   doList.innerText = "";
+  doList.classList.remove("empty-style");
   for (let todo of array) {
     const doItem = document.createElement("li");
     const checkItem = document.createElement("input");
@@ -56,25 +65,26 @@ function showToDo(array) {
         if (currentFilter === "all") {
           label.classList.add("checked");
         }
-        arrayToDo[index].done = true;
+        array[index].done = true;
       } else {
         label.classList.remove("checked");
-        arrayToDo[index].done = false;
+        array[index].done = false;
       }
-      console.log(arrayToDo[index]);
+      localStorage.setItem("safe", JSON.stringify(arrayToDo));
     });
   }
 }
+
+//*********************************************************************************
 
 function createId(text) {
   return (
     text.replaceAll(" ", "").toLowerCase() + Math.floor(Math.random() * 10000)
   );
 }
-//EventListener Radiobuttons
+//**********************************************************************************
 
 function showSelection(event) {
-  /*let radioInput = document.querySelector(".radio-button");*/
   if (event.target.value === "done") {
     const arrayDone = arrayToDo.filter(function (element) {
       return element.done === true;
@@ -87,19 +97,24 @@ function showSelection(event) {
     });
     currentFilter = "open";
     showToDo(arrayOpen);
-  } else if (event.target.value === "all") {
+  } else {
     currentFilter = "all";
     showToDo(arrayToDo);
   }
 }
+
+//*********************************************************************************
 
 function removeToDoDone() {
   let arrayRest = arrayToDo.filter(function (element) {
     return element.done === false;
   });
   arrayToDo = arrayRest;
+  localStorage.setItem("safe", JSON.stringify(arrayToDo));
+
   if (arrayToDo.length < 1) {
-    doList.innerText = "All things done. Chill now and have a nice day!";
+    doList.innerText = "All things done :-) Chill now and have a nice day!";
+    doList.classList.add("empty-style");
   } else {
     showToDo(arrayToDo);
   }

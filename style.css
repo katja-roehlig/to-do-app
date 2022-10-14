@@ -41,15 +41,9 @@ h2 {
   font-weight: 300;
   text-align: center;
   color: rgb(33, 7, 125);
-  margin-top: 2em;
+  margin-top: 10%;
 }
-h3 {
-  font-family: "Gluten";
-  font-weight: 300;
-  text-align: center;
-  color: rgb(33, 7, 125);
-  margin-top: 2em;
-}
+
 li {
   padding: 0.2em 0.8em 0.05em 0.8em;
   background-color: white;
@@ -100,6 +94,19 @@ li {
   box-shadow: 0px 0px 4px palevioletred;
   background-color: white;
 }
+.to-do-list {
+  list-style-type: none;
+  margin: 2em 5%;
+  background-color: white;
+  min-height: 10em;
+  padding-block: 0.5em;
+  border-radius: 0.4em;
+  box-shadow: 0px 0px 4px palevioletred;
+}
+
+.empty-style {
+  padding: 5em 0 5em 10vw;
+}
 /* ID-Selectors **************************************************************** */
 #write-to-do {
   width: 50vw;
@@ -111,15 +118,7 @@ li {
 #button-add {
   width: 4em;
 }
-#to-do-list {
-  list-style-type: none;
-  margin: 2em 5%;
-  background-color: white;
-  min-height: 10em;
-  padding-block: 0.5em;
-  border-radius: 0.4em;
-  box-shadow: 0px 0px 4px palevioletred;
-}
+
 #rm-button-container {
   display: flex;
   justify-content: center;
