@@ -9,7 +9,7 @@ describe("todo app", () => {
     cy.get('[data-id="list"] li').should("have.length", 0);
   });
 
-  it("should create and delete todos", () => {
+  it("should create and delete done todos", () => {
     cy.get("#write-to-do").type("kochen");
     cy.get("#button-add").click();
     cy.get("#write-to-do").type("putzen");
@@ -17,6 +17,7 @@ describe("todo app", () => {
     cy.get('[data-id="list"] li').should("have.length", 2);
     cy.get("#write-to-do").clear();
     cy.get("label [id^=kochen]").click();
+    cy.get("label.checked").should("have.text", "kochen");
     cy.get("#button-remove").click();
     cy.get('[data-id="list"] li').should("have.length", 1);
   });
