@@ -111,12 +111,12 @@ li {
   justify-content: space-around;
 }
 .to-do-list {
-  list-style: none;
+  list-style-type: none;
 }
 
 .empty-style {
   padding: 1em 1em;
-  height: 20px;
+  height: 5em;
 }
 
 .box-styling {

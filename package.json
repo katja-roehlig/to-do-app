@@ -1,0 +1,17 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve": "serve ./src",
+    "e2e": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/katja-roehlig/to-do-app#readme",
+  "devDependencies": {
+    "cypress": "^11.2.0",
+    "serve": "^14.1.2"
+  }
+}
