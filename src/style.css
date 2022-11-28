@@ -1,0 +1,148 @@
+/* Fonts ****************************************************************************/
+
+@font-face {
+  font-family: "Gluten-bold";
+  src: url(fonts/Gluten-Bold.woff2);
+  font: weight 700px;
+}
+
+@font-face {
+  font-family: "Gluten";
+  src: url(fonts/Gluten-Medium.woff2);
+  font: weight 500px;
+}
+
+/* Global Selectors**************************************************************** */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+/* Tag Selectors**************************************************************** */
+body {
+  --text-color: white;
+  --shadow-color: palevioletred;
+  --contrast-color: rgb(33, 7, 125);
+  --bg-color: hsl(86, 63%, 43%);
+  --bg-main-color: rgb(230, 227, 232);
+
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 12px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding-inline: 7%;
+  max-width: 100vmin;
+  background-color: var(--bg-main-color);
+  min-height: 85vh;
+}
+
+h1 {
+  font-family: "Gluten-bold";
+  font-size: 40px;
+  color: var(--text-color);
+  text-shadow: 3px 2px 1px var(--shadow-color),
+    5px 4px 0px var(--contrast-color);
+  padding-top: 5%;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Gluten";
+  color: var(--contrast-color);
+  padding-block: 0.5em;
+  text-align: center;
+}
+
+li {
+  padding: 0.3em 0em 0.1em 0em;
+  background-color: var(--text-color);
+}
+
+/* Class-Selectors **************************************************************** */
+.header {
+  background-color: var(--bg-color);
+  max-width: 100vmin;
+  box-shadow: 0px 3px 1px var(--shadow-color), 0px 6px 0px var(--contrast-color);
+  min-height: 15vh;
+}
+
+.adding-to-do {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3em;
+  gap: 4%;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.radio-button {
+  accent-color: var(--shadow-color);
+}
+.button-style {
+  padding: 0.7em 0.9em 0.5em 0.9em;
+  border-radius: 1.5em;
+  border: none;
+  background-color: var(--bg-color);
+  box-shadow: 0px 3px 1px var(--shadow-color), 0px 5px 0px var(--contrast-color);
+}
+.font {
+  font-family: "Gluten";
+  font-size: 1.4em;
+  color: var(--text-color);
+  text-shadow: 1px 1px 0px var(--contrast-color);
+}
+.checked {
+  text-decoration: line-through;
+}
+.radio-container {
+  display: flex;
+  justify-content: space-around;
+}
+.to-do-list {
+  list-style: none;
+}
+
+.empty-style {
+  padding: 1em 1em;
+  height: 20px;
+}
+
+.box-styling {
+  background-color: var(--text-color);
+  border: none;
+  border-radius: 0.4em;
+  box-shadow: 0px 0px 5px var(--shadow-color);
+  padding-block: 0.9em;
+}
+.star {
+  color: var(--shadow-color);
+}
+/* ID-Selectors **************************************************************** */
+#write-to-do {
+  padding-inline: 1em;
+  width: 100%;
+}
+#button-add {
+  margin-right: 1em;
+}
+#button-remove {
+  width: 12em;
+  align-self: center;
+  margin-top: 1em;
+}
+/* Special-Selectors **************************************************************** */
+input[type="checkbox"] {
+  accent-color: var(--shadow-color);
+}
